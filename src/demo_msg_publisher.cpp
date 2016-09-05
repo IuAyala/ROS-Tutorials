@@ -28,6 +28,7 @@ int main(int argc, char ** argv)
 		
 		tutorial_1_pkg::demo_msg msg;
 		
+
 		// Fill number of the msg.number
 		msg.number = number_count;
 		
