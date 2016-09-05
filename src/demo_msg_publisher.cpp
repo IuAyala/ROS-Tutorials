@@ -36,8 +36,7 @@ int main(int argc, char ** argv)
 		//strcpy(char_ptr, str1.c_str());
 		//msg.greeting = char_ptr;
 		//delete [] char_ptr;
-	
-	    //msg.greeting = "hello world";
+		
 	    msg.greeting = str1.c_str();
 		
 		// For a message to be displayed with the argument %s has to be  of the type c_str()
