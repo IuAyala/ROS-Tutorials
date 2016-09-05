@@ -43,6 +43,8 @@ int main(int argc, char ** argv)
 		ROS_INFO("%d", msg.number);
 		ROS_INFO("%s", str1.c_str() );
 		ROS_INFO("%s", msg.greeting.c_str() );
+		
+		// Publish messages
 		number_publisher.publish(msg);
 		ros::spinOnce();
 		loop_rate.sleep();
