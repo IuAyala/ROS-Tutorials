@@ -31,7 +31,7 @@ int main(int argc, char ** argv)
 		// Fill number of the msg
 		msg.number = number_count;
 		
-		// Fill sting of the message
+		// Fill sting of the messages
 		//char * char_ptr = new char [str1.length() + 1];
 		//strcpy(char_ptr, str1.c_str());
 		//msg.greeting = char_ptr;
