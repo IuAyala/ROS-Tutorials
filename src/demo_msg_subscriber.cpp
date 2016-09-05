@@ -16,6 +16,8 @@ int main(int argc, char ** argv)
 {
 	ros::init(argc, argv, "demo_msg_subscriber");
 	ros::NodeHandle node_obj;
+	
+	// Define Subscriber for the /topic_msg topic 
 	ros::Subscriber number_subscriber = node_obj.subscribe("/topic_msg", 10, msg_callback);
 	ros::spin();
 	return 0;
