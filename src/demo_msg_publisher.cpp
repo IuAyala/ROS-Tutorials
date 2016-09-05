@@ -36,9 +36,7 @@ int main(int argc, char ** argv)
 		//strcpy(char_ptr, str1.c_str());
 		//msg.greeting = char_ptr;
 		//delete [] char_ptr;
-		//std::stringstream ss;
-	    //ss << "hello world ";
-	    //msg.greeting = ss.str();
+	
 	    //msg.greeting = "hello world";
 	    msg.greeting = str1.c_str();
 		
