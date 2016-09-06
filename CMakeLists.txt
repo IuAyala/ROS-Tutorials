@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   message_generation
+  message_runtime
 )
 
 ## System dependencies are found with CMake's conventions
@@ -52,11 +53,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+ add_service_files(
+   FILES
+   demo_srv.srv
+ )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -136,6 +136,9 @@ include_directories(
  
  add_executable(demo_msg_publisher  src/demo_msg_publisher.cpp)
  add_executable(demo_msg_subscriber src/demo_msg_subscriber.cpp)
+ 
+ add_executable(demo_service_server src/demo_service_server.cpp)
+ add_executable(demo_service_client src/demo_service_client.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -144,14 +147,19 @@ include_directories(
  
  add_dependencies(demo_msg_publisher  tutorial_1_pkg_generate_message_cpp)
  add_dependencies(demo_msg_subscriber tutorial_1_pkg_generate_message_cpp)
-
+ 
+ add_dependencies(demo_service_server tutorial_1_pkg_generate_message_cpp)
+ add_dependencies(demo_service_client tutorial_1_pkg_generate_message_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(demo_topic_publisher  ${catkin_LIBRARIES} )
-target_link_libraries(demo_topic_subscriber ${catkin_LIBRARIES} )
+ target_link_libraries(demo_topic_publisher  ${catkin_LIBRARIES} )
+ target_link_libraries(demo_topic_subscriber ${catkin_LIBRARIES} )
 
-target_link_libraries(demo_msg_publisher  ${catkin_LIBRARIES} )
-target_link_libraries(demo_msg_subscriber ${catkin_LIBRARIES} )
+ target_link_libraries(demo_msg_publisher  ${catkin_LIBRARIES} )
+ target_link_libraries(demo_msg_subscriber ${catkin_LIBRARIES} )
+ 
+ target_link_libraries(demo_service_server ${catkin_LIBRARIES} )
+ target_link_libraries(demo_service_client ${catkin_LIBRARIES} )
 
 #############
 ## Install ##
