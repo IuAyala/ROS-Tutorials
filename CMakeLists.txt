@@ -14,9 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
-
-
+find_package(Boost REQUIRED COMPONENTS system )
+  
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -59,11 +58,10 @@ add_message_files(
  )
 
 ## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
+ add_action_files(
+   FILES
+   Demo_action.action
+ )
 
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
@@ -139,6 +137,9 @@ include_directories(
  
  add_executable(demo_service_server src/demo_service_server.cpp)
  add_executable(demo_service_client src/demo_service_client.cpp)
+ 
+ add_executable(demo_action_server src/demo_action_server.cpp)
+ add_executable(demo_action_client src/demo_action_client.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -151,6 +152,9 @@ include_directories(
  add_dependencies(demo_service_server tutorial_1_pkg_generate_message_cpp)
  add_dependencies(demo_service_client tutorial_1_pkg_generate_message_cpp)
 
+ add_dependencies(demo_action_server tutorial_1_pkg_generate_message_cpp)
+ add_dependencies(demo_action_client tutorial_1_pkg_generate_message_cpp)
+ 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(demo_topic_publisher  ${catkin_LIBRARIES} )
  target_link_libraries(demo_topic_subscriber ${catkin_LIBRARIES} )
@@ -160,6 +164,9 @@ include_directories(
  
  target_link_libraries(demo_service_server ${catkin_LIBRARIES} )
  target_link_libraries(demo_service_client ${catkin_LIBRARIES} )
+ 
+ target_link_libraries(demo_action_server ${catkin_LIBRARIES} )
+ target_link_libraries(demo_action_client ${catkin_LIBRARIES} )
 
 #############
 ## Install ##
