@@ -1,0 +1,17 @@
+<launch>
+
+	<!-- the argument name defines the name given to the launched node -->
+	<node 
+		name = "publisher_node" 
+		pkg="tutorial_1_pkg" 
+		type="demo_topic_publisher" 
+		output="screen"
+	/>
+	
+	<node
+		name="subscriber_node"
+		pkg="tutorial_1_pkg" 
+		type="demo_topic_subscriber"
+		output="screen"
+	/>
+</launch>
